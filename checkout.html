@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - ccwapphelper.com | NH Concealed Carry Permit Application Assistance</title>
+  <meta name="description" content="Complete your purchase for NH concealed carry permit application concierge assistance.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#f0f5ff', 100: '#e0eaff', 200: '#c2d5ff', 300: '#93b4fd', 400: '#6690f9', 500: '#4270f5', 600: '#2952e8', 700: '#1e3fd4', 800: '#1e35ac', 900: '#1e3088' },
+            navy: { 800: '#1b2a4a', 900: '#0f1b33' }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans min-h-screen flex flex-col">
+
+  <!-- Top Disclaimer Banner -->
+  <div class="bg-amber-50 border-b border-amber-200 text-amber-900 text-xs text-center py-2 px-4">
+    <strong>IMPORTANT:</strong> ccwapphelper.com is a private concierge service. We are <strong>NOT</strong> affiliated with any government agency.
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <span class="text-xl font-bold text-navy-900">ccwapphelper.com</span>
+      </a>
+      <div class="flex items-center gap-2 text-sm text-gray-500">
+        <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        Secure Checkout
+      </div>
+    </div>
+  </nav>
+
+  <!-- Checkout Content -->
+  <main class="flex-1 py-8 md:py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="grid md:grid-cols-5 gap-8">
+
+        <!-- Left: Order Form -->
+        <div class="md:col-span-3">
+          <h1 class="text-2xl font-bold mb-2">Complete Your Order</h1>
+          <p class="text-gray-500 mb-8">Secure your NH concealed carry permit application assistance.</p>
+
+          <form id="checkout-form" class="space-y-6">
+            <!-- Contact Information -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+              <h2 class="text-lg font-semibold mb-4">Contact Information</h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                  <input type="text" name="first_name" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                  <input type="text" name="last_name" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                </div>
+              </div>
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+              </div>
+              <div class="mt-4">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                <input type="tel" name="phone" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+              </div>
+            </div>
+
+            <!-- Upsell - ROSCA Compliant -->
+            <div class="bg-gradient-to-r from-brand-50 to-blue-50 rounded-xl border-2 border-brand-200 p-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">OPTIONAL ADD-ON</div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 pt-1">
+                  <input type="checkbox" id="upsell-training" name="upsell_training" class="w-5 h-5 text-brand-600 border-gray-300 rounded focus:ring-brand-500 cursor-pointer">
+                </div>
+                <div>
+                  <label for="upsell-training" class="cursor-pointer">
+                    <h3 class="font-bold text-lg mb-1">Add Defense Training Course</h3>
+                    <p class="text-gray-600 text-sm mb-3">Get access to our comprehensive defense training program including video lessons, legal carry law updates, situational awareness training, and expert tips.</p>
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-2xl font-extrabold text-brand-600">$35.00</span>
+                      <span class="text-gray-500">per month</span>
+                    </div>
+                  </label>
+                  <!-- ROSCA Required: Clear and conspicuous disclosure of material terms -->
+                  <div class="mt-3 bg-white rounded-lg border border-brand-200 p-3 text-xs text-gray-600 leading-relaxed">
+                    <p class="font-semibold text-gray-800 mb-1">Subscription Terms:</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                      <li><strong>Recurring charge:</strong> You will be charged <strong>$35.00 per month</strong>, billed automatically to the payment method you provide.</li>
+                      <li><strong>First charge:</strong> Your first payment of $35.00 will be charged today along with the $95.00 concierge service fee.</li>
+                      <li><strong>Auto-renewal:</strong> This subscription <strong>automatically renews each month</strong> until you cancel. Each renewal will charge $35.00 to your payment method on file.</li>
+                      <li><strong>How to cancel:</strong> You may cancel at any time by calling <a href="tel:+13023166263" class="text-brand-600 underline">(302) 927-1230</a> (Mon–Fri, 9 AM – 5 PM EST), emailing <a href="mailto:support@ccwapphelper.com" class="text-brand-600 underline">support@ccwapphelper.com</a>, or by clicking the unsubscribe link in any subscription email. Cancellation takes effect at the end of your current billing period.</li>
+                      <li><strong>No obligation:</strong> This subscription is entirely optional and is not required to use the concierge application service.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ROSCA Required: Separate express consent for subscription -->
+            <div id="subscription-consent" class="hidden bg-white rounded-xl border-2 border-amber-300 p-6">
+              <div class="flex gap-3">
+                <input type="checkbox" id="agree-subscription" name="agree_subscription" class="w-5 h-5 text-brand-600 border-gray-300 rounded focus:ring-brand-500 cursor-pointer mt-0.5">
+                <label for="agree-subscription" class="text-sm text-gray-700 cursor-pointer">
+                  <strong>I authorize the recurring subscription charge.</strong> I understand that by checking this box, I am enrolling in the Defense Training Course subscription at <strong>$35.00 per month</strong>, which will be billed automatically each month until I cancel. I may cancel at any time by calling (302) 927-1230 or emailing support@ccwapphelper.com. This is a separate, optional service from the one-time concierge application fee.
+                </label>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold">Payment Information</h2>
+                <div class="flex items-center gap-2">
+                  <!-- Visa -->
+                  <svg class="h-8 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="32" rx="4" fill="#1A1F71"/>
+                    <path d="M19.5 21H17L18.8 11H21.3L19.5 21ZM15.2 11L12.8 17.9L12.5 16.4L12.5 16.4L11.6 11.8C11.6 11.8 11.5 11 10.5 11H6.1L6 11.2C6 11.2 7.1 11.5 8.4 12.2L10.6 21H13.2L17.8 11H15.2ZM37.5 21H39.8L37.8 11H35.8C35 11 34.6 11.6 34.6 11.6L31 21H33.5L34 19.5H37.1L37.5 21ZM34.8 17.5L36.1 13.8L36.8 17.5H34.8ZM30.3 13.5L30.6 11.8C30.6 11.8 29.5 11.3 28.4 11.3C27.1 11.3 24.2 11.8 24.2 14.3C24.2 16.6 27.4 16.6 27.4 17.8C27.4 19 24.5 18.8 23.5 18L23.1 19.8C23.1 19.8 24.2 20.5 25.8 20.5C27.4 20.5 30.2 19.6 30.2 17.3C30.2 14.9 27 14.7 27 13.7C27 12.7 29.2 12.8 30.3 13.5Z" fill="white"/>
+                  </svg>
+                  <!-- Mastercard -->
+                  <svg class="h-8 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="32" rx="4" fill="#252525"/>
+                    <circle cx="19" cy="16" r="8" fill="#EB001B"/>
+                    <circle cx="29" cy="16" r="8" fill="#F79E1B"/>
+                    <path d="M24 10.3C25.7 11.7 26.8 13.7 26.8 16C26.8 18.3 25.7 20.3 24 21.7C22.3 20.3 21.2 18.3 21.2 16C21.2 13.7 22.3 11.7 24 10.3Z" fill="#FF5F00"/>
+                  </svg>
+                  <!-- Amex -->
+                  <svg class="h-8 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="32" rx="4" fill="#2E77BC"/>
+                    <path d="M7 16L10 10H13L14.5 13.5L16 10H19L16 16L19 22H16L14.5 18.5L13 22H10L7 16Z" fill="white"/>
+                    <path d="M20 10H27V12.5H23V14.5H26.8V17H23V19.5H27V22H20V10Z" fill="white"/>
+                    <path d="M28 10H31.5L33.5 16L35.5 10H39V22H36.5V14L34.2 22H32.8L30.5 14V22H28V10Z" fill="white" opacity="0"/>
+                    <text x="30" y="18" fill="white" font-size="7" font-weight="bold" font-family="Arial">AMEX</text>
+                  </svg>
+                  <!-- Discover -->
+                  <svg class="h-8 w-auto" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="32" rx="4" fill="#F3F4F6"/>
+                    <rect x="0" y="16" width="48" height="16" rx="0" fill="#F47216"/>
+                    <circle cx="28" cy="16" r="6" fill="#F47216"/>
+                    <text x="6" y="14" fill="#333" font-size="6" font-weight="bold" font-family="Arial">DISCOVER</text>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                <input type="text" name="card_number" placeholder="1234 5678 9012 3456" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+              </div>
+              <div class="grid grid-cols-2 gap-4 mt-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Expiration</label>
+                  <input type="text" name="card_exp" placeholder="MM / YY" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">CVC</label>
+                  <input type="text" name="card_cvc" placeholder="123" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                </div>
+              </div>
+            </div>
+
+            <!-- Agreement -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+              <div class="flex gap-3">
+                <input type="checkbox" id="agree-terms" name="agree_terms" required class="w-5 h-5 text-brand-600 border-gray-300 rounded focus:ring-brand-500 cursor-pointer mt-0.5">
+                <label for="agree-terms" class="text-sm text-gray-600 cursor-pointer">
+                  I understand that ccwapphelper.com is a <strong>private concierge service</strong> and is <strong>not a government agency</strong>. I acknowledge that the service fee is for application assistance only and does not include government fees. I understand that the charge will appear on my billing statement as <strong>"CCWAPPHELPER.COM"</strong>. I have read and agree to the <a href="/terms.html" class="text-brand-600 underline hover:text-brand-700">Terms of Service</a>, <a href="/privacy.html" class="text-brand-600 underline hover:text-brand-700">Privacy Policy</a>, <a href="/disclaimer.html" class="text-brand-600 underline hover:text-brand-700">Disclaimer</a>, and <a href="/refund-policy.html" class="text-brand-600 underline hover:text-brand-700">Refund Policy</a>.
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="w-full bg-brand-600 text-white px-6 py-4 rounded-xl text-lg font-semibold hover:bg-brand-700 transition shadow-lg shadow-brand-600/25 flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Complete Purchase
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Order Summary -->
+        <div class="md:col-span-2">
+          <div class="bg-white rounded-xl border border-gray-200 p-6 sticky top-24">
+            <h2 class="text-lg font-semibold mb-4">Order Summary</h2>
+
+            <div class="space-y-4 mb-6">
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="font-medium">Application Concierge Service</p>
+                  <p class="text-sm text-gray-500">One-time fee</p>
+                </div>
+                <p class="font-semibold">$95.00</p>
+              </div>
+
+              <div id="upsell-line-item" class="hidden flex justify-between items-start">
+                <div>
+                  <p class="font-medium">Defense Training Course</p>
+                  <p class="text-sm text-gray-500">Monthly subscription</p>
+                </div>
+                <p class="font-semibold">$35.00/mo</p>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-4 space-y-2">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Subtotal</span>
+                <span class="font-medium" id="subtotal">$95.00</span>
+              </div>
+              <div id="monthly-note" class="hidden">
+                <div class="flex justify-between text-sm">
+                  <span class="text-gray-500">+ Monthly subscription</span>
+                  <span class="text-gray-500">$35.00/mo</span>
+                </div>
+              </div>
+              <div class="flex justify-between text-lg font-bold border-t border-gray-100 pt-2">
+                <span>Due Today</span>
+                <span id="total">$95.00</span>
+              </div>
+            </div>
+
+            <!-- Billing descriptor notice -->
+            <div class="mt-4 bg-gray-50 rounded-lg p-3">
+              <p class="text-xs text-gray-600"><strong>Billing Descriptor:</strong> This charge will appear on your credit card or bank statement as <strong>"CCWAPPHELPER.COM"</strong>.</p>
+            </div>
+
+            <!-- Security badges -->
+            <div class="mt-6 pt-6 border-t border-gray-100">
+              <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                256-bit SSL Encrypted
+              </div>
+              <div class="flex items-center gap-2 text-xs text-gray-400">
+                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                Secure Payment Processing
+              </div>
+            </div>
+
+            <!-- Subscription disclosure in summary (ROSCA) -->
+            <div id="summary-subscription-terms" class="hidden mt-6 pt-4 border-t border-gray-100">
+              <p class="text-xs font-semibold text-amber-700 mb-1">Subscription Notice:</p>
+              <p class="text-xs text-amber-700 leading-relaxed">
+                The Defense Training Course is a <strong>recurring monthly subscription at $35.00/month</strong>. It will auto-renew each month until cancelled. Cancel anytime by calling (302) 927-1230 or emailing support@ccwapphelper.com.
+              </p>
+            </div>
+
+            <!-- Disclaimer in summary -->
+            <div class="mt-6 pt-4 border-t border-gray-100">
+              <p class="text-xs text-gray-400 leading-relaxed">
+                ccwapphelper.com is a service of CHAD INDUSTRIES LLC. Private concierge service &mdash; not a government agency. Our fee is for application assistance only. Government fees are paid separately to the issuing authority. We do not guarantee approval of any application.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-6 mt-auto">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-400 mb-4">
+        <a href="/terms.html" class="hover:text-gray-600 transition">Terms of Service</a>
+        <span>&middot;</span>
+        <a href="/privacy.html" class="hover:text-gray-600 transition">Privacy Policy</a>
+        <span>&middot;</span>
+        <a href="/disclaimer.html" class="hover:text-gray-600 transition">Disclaimer</a>
+        <span>&middot;</span>
+        <a href="/refund-policy.html" class="hover:text-gray-600 transition">Refund Policy</a>
+        <span>&middot;</span>
+        <a href="mailto:support@ccwapphelper.com?subject=Cancel%20My%20Subscription" class="text-red-400 hover:text-red-500 font-medium transition">Cancel Subscription</a>
+      </div>
+      <p class="text-center text-xs text-gray-400">&copy; <span id="year"></span> ccwapphelper.com, a service of CHAD INDUSTRIES LLC. Private concierge service. Not a government agency.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Upsell toggle with ROSCA-compliant consent
+    const upsellCheckbox = document.getElementById('upsell-training');
+    const upsellLineItem = document.getElementById('upsell-line-item');
+    const monthlyNote = document.getElementById('monthly-note');
+    const subtotal = document.getElementById('subtotal');
+    const total = document.getElementById('total');
+    const subscriptionConsent = document.getElementById('subscription-consent');
+    const agreeSubscription = document.getElementById('agree-subscription');
+    const summarySubscriptionTerms = document.getElementById('summary-subscription-terms');
+
+    upsellCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        upsellLineItem.classList.remove('hidden');
+        upsellLineItem.classList.add('flex');
+        monthlyNote.classList.remove('hidden');
+        subscriptionConsent.classList.remove('hidden');
+        summarySubscriptionTerms.classList.remove('hidden');
+        subtotal.textContent = '$130.00';
+        total.textContent = '$130.00';
+      } else {
+        upsellLineItem.classList.add('hidden');
+        upsellLineItem.classList.remove('flex');
+        monthlyNote.classList.add('hidden');
+        subscriptionConsent.classList.add('hidden');
+        summarySubscriptionTerms.classList.add('hidden');
+        agreeSubscription.checked = false;
+        subtotal.textContent = '$95.00';
+        total.textContent = '$95.00';
+      }
+    });
+
+    // Form submission with ROSCA validation
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // ROSCA: If subscription is selected, require separate express consent
+      if (upsellCheckbox.checked && !agreeSubscription.checked) {
+        alert('Please confirm your subscription authorization. You must check the subscription consent box to enroll in the Defense Training Course.');
+        agreeSubscription.focus();
+        return;
+      }
+
+      alert('Payment processing will be integrated here. Connect your payment processor (Stripe, etc.) to complete this functionality.');
+    });
+  </script>
+</body>
+</html>
