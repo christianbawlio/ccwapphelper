@@ -121,6 +121,66 @@
               </div>
             </div>
 
+            <!-- Optional Add-on: Expedited Processing ($39) -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 p-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">OPTIONAL ADD-ON</div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 pt-1">
+                  <input type="checkbox" id="bump-expedited" name="bump_expedited" class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer">
+                </div>
+                <div>
+                  <label for="bump-expedited" class="cursor-pointer">
+                    <h3 class="font-bold text-lg mb-1">Add Expedited Processing</h3>
+                    <p class="text-gray-600 text-sm mb-3">Move your application to the front of the line &mdash; we prepare and return your completed forms within 24 hours.</p>
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-2xl font-extrabold text-green-600">$39.00</span>
+                      <span class="text-gray-500">one-time</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Optional Add-on: Priority Document Review ($55) -->
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl border-2 border-indigo-200 p-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">OPTIONAL ADD-ON</div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 pt-1">
+                  <input type="checkbox" id="bump-review" name="bump_review" class="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 cursor-pointer">
+                </div>
+                <div>
+                  <label for="bump-review" class="cursor-pointer">
+                    <h3 class="font-bold text-lg mb-1">Add Priority Document Review</h3>
+                    <p class="text-gray-600 text-sm mb-3">A specialist reviews your completed application line-by-line and provides notarization guidance before you submit.</p>
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-2xl font-extrabold text-indigo-600">$55.00</span>
+                      <span class="text-gray-500">one-time</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Optional Add-on: Premium Support Package ($69) -->
+            <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl border-2 border-amber-200 p-6 relative overflow-hidden">
+              <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">OPTIONAL ADD-ON</div>
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 pt-1">
+                  <input type="checkbox" id="bump-premium" name="bump_premium" class="w-5 h-5 text-amber-600 border-gray-300 rounded focus:ring-amber-500 cursor-pointer">
+                </div>
+                <div>
+                  <label for="bump-premium" class="cursor-pointer">
+                    <h3 class="font-bold text-lg mb-1">Add Premium Support Package</h3>
+                    <p class="text-gray-600 text-sm mb-3">Priority phone support, document review, and automatic license renewal reminders.</p>
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-2xl font-extrabold text-amber-600">$69.00</span>
+                      <span class="text-gray-500">one-time</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <!-- Payment -->
             <div class="bg-white rounded-xl border border-gray-200 p-6">
               <div class="flex items-center justify-between mb-4">
@@ -210,6 +270,30 @@
                 </div>
                 <p class="font-semibold">$35.00/mo</p>
               </div>
+
+              <div id="bump-expedited-line" class="hidden justify-between items-start">
+                <div>
+                  <p class="font-medium">Expedited Processing</p>
+                  <p class="text-sm text-gray-500">One-time</p>
+                </div>
+                <p class="font-semibold">$39.00</p>
+              </div>
+
+              <div id="bump-review-line" class="hidden justify-between items-start">
+                <div>
+                  <p class="font-medium">Priority Document Review</p>
+                  <p class="text-sm text-gray-500">One-time</p>
+                </div>
+                <p class="font-semibold">$55.00</p>
+              </div>
+
+              <div id="bump-premium-line" class="hidden justify-between items-start">
+                <div>
+                  <p class="font-medium">Premium Support Package</p>
+                  <p class="text-sm text-gray-500">One-time</p>
+                </div>
+                <p class="font-semibold">$69.00</p>
+              </div>
             </div>
 
             <div class="border-t border-gray-100 pt-4 space-y-2">
@@ -287,48 +371,60 @@
 
   <script src="/js/main.js"></script>
   <script>
-    // Upsell toggle with ROSCA-compliant consent
+    // Pricing
+    const BASE = 95.00, MONTHLY = 35.00, EXPEDITED = 39.00, REVIEW = 55.00, PREMIUM = 69.00;
+
     const upsellCheckbox = document.getElementById('upsell-training');
     const upsellLineItem = document.getElementById('upsell-line-item');
     const monthlyNote = document.getElementById('monthly-note');
-    const subtotal = document.getElementById('subtotal');
-    const total = document.getElementById('total');
+    const subtotalEl = document.getElementById('subtotal');
+    const totalEl = document.getElementById('total');
     const subscriptionConsent = document.getElementById('subscription-consent');
     const agreeSubscription = document.getElementById('agree-subscription');
     const summarySubscriptionTerms = document.getElementById('summary-subscription-terms');
+    const oneTimeBumps = [
+      { cb: document.getElementById('bump-expedited'), line: document.getElementById('bump-expedited-line'), amt: EXPEDITED },
+      { cb: document.getElementById('bump-review'),    line: document.getElementById('bump-review-line'),    amt: REVIEW },
+      { cb: document.getElementById('bump-premium'),   line: document.getElementById('bump-premium-line'),   amt: PREMIUM },
+    ];
 
-    upsellCheckbox.addEventListener('change', function() {
-      if (this.checked) {
-        upsellLineItem.classList.remove('hidden');
-        upsellLineItem.classList.add('flex');
+    const money = n => '$' + n.toFixed(2);
+    function show(el, on) {
+      if (on) { el.classList.remove('hidden'); el.classList.add('flex'); }
+      else { el.classList.add('hidden'); el.classList.remove('flex'); }
+    }
+
+    function recalc() {
+      let oneTime = BASE;
+      oneTimeBumps.forEach(b => { if (b.cb.checked) oneTime += b.amt; show(b.line, b.cb.checked); });
+      const hasSub = upsellCheckbox.checked;
+      const dueToday = oneTime + (hasSub ? MONTHLY : 0);
+
+      show(upsellLineItem, hasSub);
+      if (hasSub) {
         monthlyNote.classList.remove('hidden');
         subscriptionConsent.classList.remove('hidden');
         summarySubscriptionTerms.classList.remove('hidden');
-        subtotal.textContent = '$130.00';
-        total.textContent = '$130.00';
       } else {
-        upsellLineItem.classList.add('hidden');
-        upsellLineItem.classList.remove('flex');
         monthlyNote.classList.add('hidden');
         subscriptionConsent.classList.add('hidden');
         summarySubscriptionTerms.classList.add('hidden');
         agreeSubscription.checked = false;
-        subtotal.textContent = '$95.00';
-        total.textContent = '$95.00';
       }
-    });
+      subtotalEl.textContent = money(oneTime);
+      totalEl.textContent = money(dueToday);
+    }
 
-    // Form submission with ROSCA validation
+    [upsellCheckbox, ...oneTimeBumps.map(b => b.cb)].forEach(el => el.addEventListener('change', recalc));
+    recalc();
+
     document.getElementById('checkout-form').addEventListener('submit', function(e) {
       e.preventDefault();
-
-      // ROSCA: If subscription is selected, require separate express consent
       if (upsellCheckbox.checked && !agreeSubscription.checked) {
         alert('Please confirm your subscription authorization. You must check the subscription consent box to enroll in the Defense Training Course.');
         agreeSubscription.focus();
         return;
       }
-
       alert('Payment processing will be integrated here. Connect your payment processor (Stripe, etc.) to complete this functionality.');
     });
   </script>
